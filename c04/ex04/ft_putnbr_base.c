@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/30 11:19:04 by edforte           #+#    #+#             */
-/*   Updated: 2023/09/30 13:25:26 by edforte          ###   ########.fr       */
+/*   Created: 2023/10/01 12:03:24 by edforte           #+#    #+#             */
+/*   Updated: 2023/10/01 12:08:38 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int check_input(int argc, char **argv);
-
-int	main(int argc, char **argv)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	check_input(argc, argv);
+	if 
 }
-

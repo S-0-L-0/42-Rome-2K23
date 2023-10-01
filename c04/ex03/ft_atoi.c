@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 10:19:07 by edforte           #+#    #+#             */
-/*   Updated: 2023/09/29 11:12:40 by edforte          ###   ########.fr       */
+/*   Created: 2023/10/01 11:42:31 by edforte           #+#    #+#             */
+/*   Updated: 2023/10/01 12:03:05 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_atoi(char *str)
 {
 	int	i;
@@ -20,6 +21,9 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (str[i] != '\0')
 	{
+		if (!(str[i] >= '0' && str[i] <= '9') && \
+			   	(str[i] != ' ' || str[i] != '-' || str[i] != '+'))
+			return (result);
 		if (str[i] == '-')
 			sign = -sign;
 		if (str[i] >= '0' && str[i] <= '9')

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/30 11:19:04 by edforte           #+#    #+#             */
-/*   Updated: 2023/09/30 13:25:26 by edforte          ###   ########.fr       */
+/*   Created: 2023/10/01 10:38:39 by edforte           #+#    #+#             */
+/*   Updated: 2023/10/01 10:42:26 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-int check_input(int argc, char **argv);
-
-int	main(int argc, char **argv)
+int	ft_strlen(char *str)
 {
-	check_input(argc, argv);
-}
+	int	i;
 
+	i = 0;
+	while (str[i])
+		i ++;
+	return (i);
+}
