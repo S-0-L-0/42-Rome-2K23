@@ -6,7 +6,7 @@
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 11:42:31 by edforte           #+#    #+#             */
-/*   Updated: 2023/10/01 12:03:05 by edforte          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:42:31 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	ft_atoi(char *str)
 	while (str[i] != '\0')
 	{
 		if (!(str[i] >= '0' && str[i] <= '9') && \
-			   	(str[i] != ' ' || str[i] != '-' || str[i] != '+'))
+				(str[i] != ' ' || str[i] != '-' || str[i] != '+' || \
+				str[i] != '\t' || str[i] != '\v' || str[i] != '\n' || \
+				str[i] != '\r' || str[i] != '\f' || str[i] != '\b'))
 			return (result);
 		if (str[i] == '-')
 			sign = -sign;
@@ -31,9 +33,7 @@ int	ft_atoi(char *str)
 		if (str[i] != '-')
 			if ((str[i] >= '0' && str[i] <= '9') && \
 					(str[i + 1] < '0' || str[i + 1] > '9'))
-			{
 				return (sign * result);
-			}
 		i ++;
 	}
 	return (sign * result);
