@@ -1,38 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 11:42:31 by edforte           #+#    #+#             */
-/*   Updated: 2023/10/02 17:54:47 by edforte          ###   ########.fr       */
+/*   Created: 2023/10/04 07:40:28 by edforte           #+#    #+#             */
+/*   Updated: 2023/10/04 08:11:05 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-int	ft_atoi(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
-	int	result;
-	int	sign;
 
 	i = 0;
-	result = 0;
-	sign = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' || \
-			str[i] == '\n' || str[i] == '\r' || str[i] == '\f' || \
-			str[i] == '\b')
-		i ++;
-	while (str[i] == '-' || str[i] == '+')
+	while (src[i] != '\0')
 	{
-		if (str[i] == '-')
-			sign = (sign * -1);
+		dest[i] = src[i];
 		i ++;
 	}
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
+	dest[i] = '\0';
+	return (dest);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
 		i ++;
-	}
-	return (sign * result);
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		len;
+	char	*dup;
+
+	if (src == NULL)
+		return (NULL);
+	len = ft_strlen(src);
+	dup = (char *)malloc(len + 1);
+	if (dup != NULL)
+		ft_strcpy(dup, src);
+	free(dup);
+	return (dup);
 }
