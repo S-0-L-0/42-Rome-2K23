@@ -6,7 +6,7 @@
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 07:40:28 by edforte           #+#    #+#             */
-/*   Updated: 2023/10/04 08:11:05 by edforte          ###   ########.fr       */
+/*   Updated: 2023/10/08 11:29:23 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -46,6 +46,5 @@ char	*ft_strdup(char *src)
 	dup = (char *)malloc(len + 1);
 	if (dup != NULL)
 		ft_strcpy(dup, src);
-	free(dup);
 	return (dup);
 }

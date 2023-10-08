@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 11:18:49 by edforte           #+#    #+#             */
-/*   Updated: 2023/10/08 11:46:22 by edforte          ###   ########.fr       */
+/*   Created: 2023/10/04 01:34:36 by edforte           #+#    #+#             */
+/*   Updated: 2023/10/07 19:21:44 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 
-int	ft_ultimate_range(int **range, int min, int max)
+int	ft_is_prime(int nb)
 {
-	int	elements;
 	int	i;
 
-	elements = max - min;
-	i = 0;
-	if (min >= max)
-	{
-		*range = NULL;
+	if (nb <= 1)
 		return (0);
-	}
-	*range = (int *) malloc (elements * sizeof(int));
-	if (!(*range))
-		return (-1);
-	while (min < max)
+	i = 2;
+	while (i * i <= nb)
 	{
-		(*range)[i] = min;
+		if (nb % i == 0)
+			return (0);
 		i ++;
-		min ++;
 	}
-	return (elements);
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (nb <= 1)
+		return (2);
+	while (ft_is_prime(nb) == 0)
+		nb += 1;
+	return (nb);
 }
