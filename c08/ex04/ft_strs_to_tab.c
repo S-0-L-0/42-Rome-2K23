@@ -6,7 +6,7 @@
 /*   By: edforte <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:08:01 by edforte           #+#    #+#             */
-/*   Updated: 2023/10/09 16:51:24 by edforte          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:13:17 by edforte          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -52,18 +52,22 @@ char	*ft_strdup(char *src)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	t_stock_str	*multi_array;
+	t_stock_str	*multiarray;
 	int			i;
 
+	multiarray = (t_stock_str *) malloc(sizeof(t_stock_str) * (ac + 1));
+	if (multiarray == NULL)
+		return (0);
 	i = 0;
-	multi_array = (t_stock_str *) malloc((ac + 1) * sizeof(t_stock_str));
 	while (i < ac)
 	{
-		multy_array[i].str = av[i];
-		multi_array[i].size = ft_strlen(av[i]);
-		multy_array[i].copy = ft_strdup(av[i]);
+		multiarray[i].str = av[i];
+		multiarray[i].size = ft_strlen(av[i]);
+		multiarray[i].copy = ft_strdup(av[i]);
 		i ++;
 	}
-	multi_array[i].str = 0;
-	return (multi_array);
+	multiarray[i].str = 0;
+	multiarray[i].size = sizeof(NULL);
+	multiarray[i].copy = 0;
+	return (multiarray);
 }
